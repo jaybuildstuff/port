@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Merete | Creative Portfolio</title>
+  <meta name="description" content="Jay Merete's portfolio: filmmaker and creative director blending dream and reality.">
+
+  <!-- 1. Proper Tailwind Config **before** the CDN script! -->
+  <script>
+    window.tailwind = {
+      config: {
+        darkMode: 'class'
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Fontshare -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Satoshi', sans-serif;
+      transition: background-color 0.6s, color 0.6s;
+    }
+    /* Grain, ambient, morph, fade-in etc., unchanged from the suggestion above for brevity */
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='%23FFF' fill-opacity='.09' width='100' height='100'/%3E%3Ccircle fill='%23000' fill-opacity='.09' cx='10' cy='10' r='2'/%3E%3Ccircle fill='%23000' fill-opacity='.07' cx='80' cy='40' r='1.4'/%3E%3Ccircle fill='%23000' fill-opacity='.05' cx='60' cy='90' r='1'/%3E%3C/svg%3E");
+      animation: grainMove 20s linear infinite;
+    }
+    @keyframes grainMove {
+      0% { transform: translate(0,0) }
+      50% { transform: translate(-2%,2%) }
+      100% { transform: translate(0,0) }
+    }
+    .ambient-light {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,120,0,0.03), transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(120,0,255,0.02), transparent 50%);
+    }
+    .portrait-morph {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      animation: morph 14s ease-in-out infinite;
+      overflow: hidden;
+    }
+    @keyframes morph {
+      0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+      50% { border-radius: 40% 60% 60% 40% / 50% 50% 60% 40%; }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s, transform 1.2s;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* For accessibility */
+    .skip-link { position:absolute; left:-100vw; top:0; z-index:999; background:#fff; color:#111; padding:0.75rem 1.25rem; border-radius:0.5rem; font-weight:600; outline: none; transition:left 0.3s; }
+    .skip-link:focus { left:1rem;}
+  </style>
+  <!-- System dark fallback (covers <html> and <body> by default) -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #09090b; color: #fafafa; }
+    }
+  </style>
+</head>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-orange-500/30">
+
+  <!-- Skip link for a11y -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="ambient-light"></div>
+  <div class="grain"></div>
+
+  <header>
+    <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-40 backdrop-blur-md">
+      <div class="flex gap-6 text-xs tracking-widest uppercase opacity-50">
+        <a 
+          href="https://instagram.com/jay.merete" 
+          target="_blank" rel="noopener noreferrer"
+          class="hover:opacity-100 transition flex items-center gap-2"
+          aria-label="Instagram (opens in new tab)">
+          <i data-lucide="instagram" class="w-4 h-4" aria-hidden="true"></i> IG
+        </a>
+        <a 
+          href="mailto:yididyamerete@gmail.com"
+          class="hover:opacity-100 transition flex items-center gap-2"
+          aria-label="Email Jay">
+          <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i> EMAIL
+        </a>
+      </div>
+      <button 
+        id="themeToggle"
+        class="p-3 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all min-w-[44px] min-h-[44px] flex items-center justify-center"
+        aria-label="Toggle dark mode"
+        type="button"
+      >
+        <i id="moonIcon" data-lucide="moon" class="w-5 h-5"></i>
+        <i id="sunIcon" data-lucide="sun" class="w-5 h-5 hidden"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="max-w-6xl mx-auto px-6 pt-32 pb-32">
+    <section class="grid md:grid-cols-12 gap-16 items-end mb-40 fade-in">
+      <div class="md:col-span-5 relative">
+        <div class="portrait-morph w-72 h-96 bg-zinc-200 dark:bg-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+          <img 
+            src="your-photo.jpg"
+            class="w-full h-full object-cover"
+            alt="Portrait of Jay Merete, filmmaker and creative director."
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-8">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-none">
+          Jay Merete.
+        </h1>
+        <p class="text-xl opacity-70 max-w-lg leading-relaxed">
+          Filmmaker & Creative Director. Crafting visual narratives that linger in the space between dreams and reality.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+      const html = document.documentElement;
+      const toggle = document.getElementById("themeToggle");
+      const moonIcon = document.getElementById("moonIcon");
+      const sunIcon = document.getElementById("sunIcon");
+      // Get theme preference
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      function setTheme(mode) {
+        if (mode === "dark") {
+          html.classList.add("dark");
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
+        } else {
+          html.classList.remove("dark");
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
+        }
+      }
+
+      // Initial load theme
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+
+      // Toggle theme on click
+      toggle.addEventListener("click", function () {
+        const isDark = html.classList.toggle("dark");
+        if (isDark) {
+          localStorage.setItem("theme", "dark");
+          setTheme("dark");
+        } else {
+          localStorage.setItem("theme", "light");
+          setTheme("light");
+        }
+      });
+
+      // Fade-in effect
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

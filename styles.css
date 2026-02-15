@@ -1,0 +1,98 @@
+:root {
+  --bg: #f7f7f8;
+  --text-primary: #111111;
+  --text-secondary: #444446;
+  --text-muted: #66666a;
+  --border: #dedee3;
+  --cta-bg: #fff;
+  --cta-text: #111111;
+  --cta-border: #dedee3;
+  --cta-hover: #f0f0f2;
+}
+
+/* Native UI color modes for scrollbars, form fields, etc */
+html {
+  color-scheme: light dark;
+}
+
+html.dark {
+  --bg: #0f0f17;
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-muted: #9ca3af;
+  --border: #222225;
+  --cta-bg: #111;
+  --cta-text: #fafafa;
+  --cta-border: #222225;
+  --cta-hover: #1a1a24;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Satoshi', system-ui, sans-serif;
+  transition: background 0.25s ease, color 0.25s ease;
+  /* Fallback for Tailwind's .font-sans if class forgotten */
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating CTA Button */
+.floating-cta {
+  position: fixed;
+  z-index: 60;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  background: var(--cta-bg);
+  border: 1px solid var(--cta-border);
+  color: var(--cta-text);
+  padding: .5em 1em;
+  border-radius: 2em;
+  font-weight: 500;
+  font-size: 1.07rem;
+  box-shadow: 0 2px 8px 0 rgba(30,30,30,.04);
+  text-decoration: none;
+  transition: background .18s, color .18s, box-shadow .18s, border .18s;
+}
+.floating-cta:hover,
+.floating-cta:focus-visible {
+  background: var(--cta-hover);
+  color: var(--cta-text);
+  border-color: var(--border);
+  box-shadow: 0 4px 16px 0 rgba(60,60,60,.06);
+  outline: none;
+}
+@media (max-width: 640px) {
+  .floating-cta { bottom: .66rem; right: .66rem; font-size: .98rem; padding: .43em .69em; }
+}
+
+/* System icons and toggle use semantic tokens and focus/hover styles */
+.sys-icon {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.sys-icon:hover,
+.sys-icon:focus-visible {
+  color: var(--text-primary);
+  outline: none;
+}
+.theme-toggle-btn {
+  color: var(--text-secondary);
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus-visible {
+  color: var(--text-primary);
+  outline: none;
+}

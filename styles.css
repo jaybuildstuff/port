@@ -1,225 +1,154 @@
-/* =========================
-   DESIGN TOKENS
-========================= */
-
-:root {
-  --bg: #ffffff;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --border: #dddddd;
-
-  --available-color: #3ba776;
-  --unavailable-color: #999999;
-
-  --max-width: 1100px;
-}
-
-
-/* =========================
-   BASE
-========================= */
-
-*,
-*::before,
-*::after {
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Satoshi", sans-serif;
-  background: var(--bg);
-  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
   line-height: 1.6;
+  padding: 40px 60px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-section {
-  padding: 100px 20px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.site-header {
-  padding: 30px 20px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.social-nav {
+/* HEADER */
+.header {
   display: flex;
-  gap: 20px;
-  font-size: 0.9rem;
+  justify-content: flex-end;
+  margin-bottom: 80px;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+.top-links a {
+  color: #888;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.hero-identity h1 {
-  font-size: 3rem;
-  margin: 0;
+.top-links a:hover {
+  color: #ffffff;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 120px;
+}
+
+.hero-left {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .role {
-  margin-top: 15px;
-  color: var(--text-secondary);
+  font-size: 18px;
+  color: #aaa;
+  margin-bottom: 20px;
 }
 
 .bio {
-  margin-top: 25px;
-  max-width: 500px;
+  font-size: 16px;
+  color: #ccc;
 }
 
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+/* RIGHT SIDE */
+.hero-right {
+  text-align: right;
 }
 
-
-/* =========================
-   AVAILABILITY
-========================= */
-
-.availability-indicator {
-  display: flex;
+.availability {
+  display: inline-flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #aaa;
 }
 
-.status-dot {
+.dot {
   width: 8px;
   height: 8px;
+  background: #00ff88;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.availability-indicator.available .status-dot {
-  background: var(--available-color);
-}
-
-.availability-indicator.unavailable .status-dot {
-  background: var(--unavailable-color);
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.primary-cta {
+.cta {
   display: inline-block;
-  padding: 10px 20px;
-  border: 1px solid var(--border);
-  transition: all 0.25s ease;
+  padding: 10px 18px;
+  border: 1px solid #ffffff;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.primary-cta:hover {
-  background: var(--text-primary);
-  color: white;
+.cta:hover {
+  background: #ffffff;
+  color: #000000;
 }
 
-.primary-cta:focus-visible {
-  outline: 2px solid var(--border);
-  outline-offset: 4px;
+/* WORK */
+.work h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
-
-/* =========================
-   WORK
-========================= */
-
-.section-title {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 60px;
-}
-
-.work-category {
-  border-top: 1px solid var(--border);
-  padding: 25px 0;
+.category {
+  border-top: 1px solid #333;
+  padding: 20px 0;
 }
 
 .category-toggle {
-  width: 100%;
   background: none;
   border: none;
-  font-family: inherit;
-  font-size: 1.1rem;
-  text-align: left;
+  color: #ffffff;
+  font-size: 18px;
   cursor: pointer;
-  padding: 10px 0;
+  width: 100%;
+  text-align: left;
 }
 
 .category-content {
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.4s ease;
+  color: #aaa;
+  margin-top: 10px;
 }
 
 .category-content.expanded {
-  max-height: 1000px;
-  opacity: 1;
+  max-height: 200px;
 }
 
-.project {
-  padding: 15px 0;
-  color: var(--text-secondary);
+/* HOBBY */
+.hobby {
+  margin-top: 120px;
 }
 
-
-/* =========================
-   PERSONAL
-========================= */
-
-.personal-content {
-  text-align: center;
-  color: var(--text-secondary);
-  line-height: 2;
+.hobby h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
-.site-footer {
-  padding: 60px 20px;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+.hobby p {
+  color: #aaa;
+  margin-bottom: 10px;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 80px 20px;
-  }
+/* FOOTER */
+.footer {
+  margin-top: 120px;
+  color: #555;
+  font-size: 14px;
 }

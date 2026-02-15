@@ -3,208 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yididya Merete | Portfolio</title>
-  <meta name="description" content="The creative portfolio of Yididya Merete: filmmaker, creative director, writer, and more." />
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: { extend: {} }
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f7f7f8;
-      --text-primary: #111111;
-      --text-secondary: #444446;
-      --text-muted: #66666a;
-      --border: #dedee3;
-      --cta-bg: #fff;
-      --cta-text: #111111;
-      --cta-border: #dedee3;
-      --cta-hover: #f0f0f2;
-    }
-    html.dark {
-      --bg: #0f0f17;
-      --text-primary: #fafafa;
-      --text-secondary: #d4d4d8;
-      --text-muted: #9ca3af;
-      --border: #222225;
-      --cta-bg: #111;
-      --cta-text: #fafafa;
-      --cta-border: #222225;
-      --cta-hover: #1a1a24;
-    }
-    html {
-      color-scheme: light dark;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: 'Satoshi', system-ui, sans-serif;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-    .section-fade {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
-    }
-    .section-fade.visible { opacity: 1; transform: translateY(0);}
-    .floating-cta {
-      position: fixed;
-      z-index: 60;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: .5em;
-      background: var(--cta-bg);
-      border: 1px solid var(--cta-border);
-      color: var(--cta-text);
-      padding: .5em 1em;
-      border-radius: 2em;
-      font-weight: 500;
-      font-size: 1.07rem;
-      box-shadow: 0 2px 8px 0 rgba(30,30,30,.04);
-      text-decoration: none;
-      transition: background .18s, color .18s, box-shadow .18s, border .18s;
-    }
-    .floating-cta:hover,
-    .floating-cta:focus-visible {
-      background: var(--cta-hover);
-      color: var(--cta-text);
-      border-color: var(--border);
-      box-shadow: 0 4px 16px 0 rgba(60,60,60,.06);
-      outline: none;
-    }
-    @media (max-width: 640px) {
-      .floating-cta { bottom: .66rem; right: .66rem; font-size: .98rem; padding: .43em .69em; }
-    }
-    .sys-icon {
-      color: var(--text-secondary);
-      transition: color 0.2s;
-    }
-    .sys-icon:hover,
-    .sys-icon:focus-visible {
-      color: var(--text-primary);
-      outline: none;
-    }
-    .theme-toggle-btn {
-      color: var(--text-secondary);
-      transition: color 0.2s, background 0.2s, border-color 0.2s;
-    }
-    .theme-toggle-btn:hover,
-    .theme-toggle-btn:focus-visible {
-      color: var(--text-primary);
-      outline: none;
-    }
-  </style>
-</head>
-<body class="font-sans min-h-screen">
+  <title>Yididya Merete | Creative Director</title>
+  <meta name="description" content="Creative Director, Filmmaker and Writer based in Addis Ababa.">
 
-  <!-- Header: minimal social + phone, CSS-token hover -->
-  <header class="fixed top-0 left-0 w-full flex justify-between z-40 pointer-events-none">
-    <div class="p-6 pl-8 flex gap-3 pointer-events-auto">
-      <a href="https://instagram.com/jay.merete"
-        target="_blank" rel="noopener noreferrer"
-        aria-label="Instagram"
-        class="sys-icon"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="w-5 h-5"><rect x="4.7" y="4.7" width="14.6" height="14.6" rx="4.3" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="mailto:yididyamerete@gmail.com"
-        aria-label="Email"
-        class="sys-icon"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="w-5 h-5"><rect x="3.5" y="6" width="17" height="12" rx="2.8" stroke="currentColor"/><path d="M5 8l7 5.5L19 8" stroke="currentColor"/></svg>
-      </a>
-      <a href="tel:0962090848"
-        aria-label="Phone"
-        class="sys-icon"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="w-5 h-5">
-          <path d="M6.82 3.98l2.01 2.01a.99.99 0 01-.21 1.61l-1.14.66A13.12 13.12 0 0017.77 17.77l.66-1.14a.99.99 0 011.61-.21l2.01 2.01a1.01 1.01 0 01-1.14 1.61C17.2 20.99 13.07 18.65 9.90 15.47 6.73 12.3 4.39 8.17 4.01 3.98a1.01 1.01 0 011.61-1.14z" stroke="currentColor"/>
-        </svg>
-      </a>
-    </div>
-    <div class="p-6 pr-8 pointer-events-auto">
-      <button id="themeToggle"
-        class="theme-toggle-btn inline-flex items-center justify-center rounded-full border border-[var(--border)] transition-all bg-[var(--cta-bg)] hover:bg-[var(--bg)] w-[2.5em] h-[2.5em] min-w-[2.5em] min-h-[2.5em] focus:outline-none focus:ring-2 focus:ring-[var(--border)]"
-        aria-label="Toggle dark mode"
-        type="button"
-      >
-        <svg id="themeIcon" viewBox="0 0 24 24" class="theme-icon"></svg>
-      </button>
-    </div>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="social-nav">
+      <a href="https://instagram.com/jay.merete" target="_blank" aria-label="Instagram" class="sys-icon">Instagram</a>
+      <a href="mailto:yididyamerete@gmail.com" aria-label="Email" class="sys-icon">Email</a>
+    </nav>
   </header>
 
-  <!-- Floating chat CTA, now primary text system and clearer hover -->
-  <a href="https://t.me/loose_change"
-    target="_blank" rel="noopener noreferrer"
-    class="floating-cta"
-    aria-label="Message me"
-  >
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="w-[20px] h-[20px]">
-      <rect x="2.5" y="3.5" width="19" height="16" rx="4.2" stroke="currentColor"/>
-      <path d="M7.5 8.5h9m-9 4h6" stroke="currentColor" stroke-linecap="round"/>
-    </svg>
-    <span class="text-base md:text-[1.03rem] font-medium">Message me</span>
-  </a>
 
-  <!-- Portfolio Hero -->
-  <main class="flex flex-1 flex-col items-center justify-center w-full px-4 pt-24 sm:pt-24 relative z-10">
-    <section class="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 section-fade">
-      <!-- Portrait & name -->
-      <div class="flex flex-col items-center md:items-start flex-shrink-0 w-full md:w-auto">
-        <div class="w-48 md:w-52 h-48 md:h-52 rounded-full bg-[var(--border)] flex items-center justify-center shadow transition-transform duration-300 hover:scale-[1.04]">
-          <img src="your-photo.jpg" alt="Yididya Merete, portrait"
-            class="w-full h-full object-cover object-top rounded-full"/>
+  <main>
+
+    <!-- HERO -->
+    <section class="hero-section">
+
+      <div class="hero-grid">
+
+        <div class="hero-identity">
+          <h1>Yididya Merete</h1>
+          <p class="role">Creative Director • Filmmaker • Writer</p>
+
+          <p class="bio">
+            Visual storyteller blending reality and dreams into narrative-driven
+            film, television and commercial work based in Addis Ababa.
+          </p>
         </div>
-        <h1 class="mt-8 mb-1 text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-[var(--text-primary)] text-center md:text-left">
-          Yididya Merete
-        </h1>
-        <div class="mb-3 text-sm tracking-wide text-[var(--text-secondary)] font-normal text-center md:text-left">
-          Creative Director, Filmmaker, Writer
+
+        <div class="hero-actions">
+
+          <div class="availability-indicator available">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for selected projects</span>
+          </div>
+
+          <a href="https://t.me/loose_change"
+             target="_blank"
+             class="primary-cta">
+            → Start a Conversation
+          </a>
+
         </div>
-        <div class="text-sm text-[var(--text-muted)] text-center md:text-left">
-          Addis Ababa, Ethiopia
-        </div>
-      </div>
-      <!-- Bio & extras -->
-      <div class="flex-1 flex flex-col justify-center items-center md:items-start w-full md:w-auto">
-        <p class="mt-4 md:mt-2 mb-2 text-base md:text-lg font-normal leading-relaxed text-[var(--text-muted)] text-center md:text-left">
-          Visual storyteller & creative mind — blending reality and dreams into unique narratives.
-          <br>
-          I direct, write, coordinate, and guide stories across television, commercial, and visual spaces.
-        </p>
+
       </div>
     </section>
+
+
+
+    <!-- WORK -->
+    <section class="work-section">
+      <h2 class="section-title">Selected Work</h2>
+
+      <div class="work-categories">
+
+        <section class="work-category">
+          <button class="category-toggle">Creative Direction</button>
+          <div class="category-content">
+            <div class="project">Project Placeholder</div>
+          </div>
+        </section>
+
+        <section class="work-category">
+          <button class="category-toggle">Film & TV Directing</button>
+          <div class="category-content">
+            <div class="project">Project Placeholder</div>
+          </div>
+        </section>
+
+        <section class="work-category">
+          <button class="category-toggle">Writing & Script Development</button>
+          <div class="category-content">
+            <div class="project">Project Placeholder</div>
+          </div>
+        </section>
+
+        <section class="work-category">
+          <button class="category-toggle">Assistant Directing</button>
+          <div class="category-content">
+            <div class="project">Project Placeholder</div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+
+
+    <!-- PERSONAL -->
+    <section class="personal-section">
+      <h2 class="section-title">Beyond Film</h2>
+
+      <div class="personal-content">
+        <p>Poetry</p>
+        <p>Song & Melody Writing</p>
+      </div>
+    </section>
+
   </main>
 
-  <script>
-    const SUN = `<circle cx="12" cy="12" r="5" stroke="currentColor" fill="none"/><g stroke="currentColor"><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="3" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="21" y2="12"/><line x1="5.8" y1="5.8" x2="7.6" y2="7.6"/><line x1="16.4" y1="16.4" x2="18.2" y2="18.2"/><line x1="5.8" y1="18.2" x2="7.6" y2="16.4"/><line x1="16.4" y1="7.6" x2="18.2" y2="5.8"/></g>`;
-    const MOON = `<path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" fill="none"/>`;
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggleBtn = document.getElementById("themeToggle");
-      const icon = document.getElementById("themeIcon");
-      const html = document.documentElement;
-      const storage = localStorage;
-      function setTheme(mode) {
-        if (mode === "dark") { html.classList.add("dark"); icon.innerHTML = MOON; }
-        else { html.classList.remove("dark"); icon.innerHTML = SUN; }
-      }
-      let savedTheme = storage.getItem("theme");
-      if (!savedTheme) {
-        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-      }
-      setTheme(savedTheme);
-      toggleBtn.addEventListener("click", () => {
-        if (html.classList.contains("dark")) { setTheme("light"); storage.setItem("theme", "light"); }
-        else { setTheme("dark"); storage.setItem("theme", "dark"); }
-      });
-      document.querySelectorAll('.section-fade').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'), 80+i*90));
-    });
-  </script>
+
+
+  <footer class="site-footer">
+    © 2026 Yididya Merete
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

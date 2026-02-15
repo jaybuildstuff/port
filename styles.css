@@ -1,98 +1,225 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+
 :root {
-  --bg: #f7f7f8;
+  --bg: #ffffff;
   --text-primary: #111111;
-  --text-secondary: #444446;
-  --text-muted: #66666a;
-  --border: #dedee3;
-  --cta-bg: #fff;
-  --cta-text: #111111;
-  --cta-border: #dedee3;
-  --cta-hover: #f0f0f2;
+  --text-secondary: #555555;
+  --border: #dddddd;
+
+  --available-color: #3ba776;
+  --unavailable-color: #999999;
+
+  --max-width: 1100px;
 }
 
-/* Native UI color modes for scrollbars, form fields, etc */
-html {
-  color-scheme: light dark;
-}
 
-html.dark {
-  --bg: #0f0f17;
-  --text-primary: #fafafa;
-  --text-secondary: #d4d4d8;
-  --text-muted: #9ca3af;
-  --border: #222225;
-  --cta-bg: #111;
-  --cta-text: #fafafa;
-  --cta-border: #222225;
-  --cta-hover: #1a1a24;
+/* =========================
+   BASE
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
+  font-family: "Satoshi", sans-serif;
   background: var(--bg);
   color: var(--text-primary);
-  font-family: 'Satoshi', system-ui, sans-serif;
-  transition: background 0.25s ease, color 0.25s ease;
-  /* Fallback for Tailwind's .font-sans if class forgotten */
+  line-height: 1.6;
 }
 
-.section-fade {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
-}
-.section-fade.visible {
-  opacity: 1;
-  transform: translateY(0);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Floating CTA Button */
-.floating-cta {
-  position: fixed;
-  z-index: 60;
-  bottom: 1.2rem;
-  right: 1.2rem;
+section {
+  padding: 100px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  padding: 30px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.social-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.hero-identity h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.role {
+  margin-top: 15px;
+  color: var(--text-secondary);
+}
+
+.bio {
+  margin-top: 25px;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+/* =========================
+   AVAILABILITY
+========================= */
+
+.availability-indicator {
   display: flex;
   align-items: center;
-  gap: .5em;
-  background: var(--cta-bg);
-  border: 1px solid var(--cta-border);
-  color: var(--cta-text);
-  padding: .5em 1em;
-  border-radius: 2em;
-  font-weight: 500;
-  font-size: 1.07rem;
-  box-shadow: 0 2px 8px 0 rgba(30,30,30,.04);
-  text-decoration: none;
-  transition: background .18s, color .18s, box-shadow .18s, border .18s;
-}
-.floating-cta:hover,
-.floating-cta:focus-visible {
-  background: var(--cta-hover);
-  color: var(--cta-text);
-  border-color: var(--border);
-  box-shadow: 0 4px 16px 0 rgba(60,60,60,.06);
-  outline: none;
-}
-@media (max-width: 640px) {
-  .floating-cta { bottom: .66rem; right: .66rem; font-size: .98rem; padding: .43em .69em; }
+  font-size: 0.9rem;
 }
 
-/* System icons and toggle use semantic tokens and focus/hover styles */
-.sys-icon {
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.availability-indicator.available .status-dot {
+  background: var(--available-color);
+}
+
+.availability-indicator.unavailable .status-dot {
+  background: var(--unavailable-color);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.primary-cta {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+
+.primary-cta:hover {
+  background: var(--text-primary);
+  color: white;
+}
+
+.primary-cta:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 4px;
+}
+
+
+/* =========================
+   WORK
+========================= */
+
+.section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 60px;
+}
+
+.work-category {
+  border-top: 1px solid var(--border);
+  padding: 25px 0;
+}
+
+.category-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.category-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.category-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.project {
+  padding: 15px 0;
   color: var(--text-secondary);
-  transition: color 0.2s;
 }
-.sys-icon:hover,
-.sys-icon:focus-visible {
-  color: var(--text-primary);
-  outline: none;
-}
-.theme-toggle-btn {
+
+
+/* =========================
+   PERSONAL
+========================= */
+
+.personal-content {
+  text-align: center;
   color: var(--text-secondary);
-  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  line-height: 2;
 }
-.theme-toggle-btn:hover,
-.theme-toggle-btn:focus-visible {
-  color: var(--text-primary);
-  outline: none;
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 80px 20px;
+  }
 }

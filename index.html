@@ -1,184 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yididya Merete | Creative Director</title>
-  <meta name="description" content="Creative Director, Filmmaker and Writer based in Addis Ababa.">
+  <title>Yididya Merete</title>
 
-  <!-- Font -->
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <nav class="social-nav">
-      <a href="https://instagram.com/jay.merete"
-         target="_blank"
-         aria-label="Instagram"
-         class="sys-icon">
-         Instagram
-      </a>
-
-      <a href="mailto:yididyamerete@gmail.com"
-         aria-label="Email"
-         class="sys-icon">
-         Email
-      </a>
-    </nav>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="top-links">
+      <a href="https://instagram.com/jay.merete" target="_blank">Instagram</a>
+      <a href="mailto:yididyamerete@gmail.com">Email</a>
+    </div>
   </header>
 
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Yididya Merete</h1>
+      <p class="role">Creative Director • Filmmaker • Writer</p>
+      <p class="bio">
+        Visual storyteller blending reality and dreams into narrative-driven film,
+        television and commercial work.
+      </p>
+    </div>
 
-  <!-- ================= MAIN ================= -->
-  <main>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero-section">
-
-      <div class="hero-grid">
-
-        <!-- Identity -->
-        <div class="hero-identity">
-          <h1>Yididya Merete</h1>
-
-          <p class="role">
-            Creative Director • Filmmaker • Writer
-          </p>
-
-          <p class="bio">
-            Visual storyteller blending reality and dreams into narrative-driven
-            film, television and commercial work based in Addis Ababa.
-          </p>
-        </div>
-
-
-        <!-- Availability + CTA -->
-        <div class="hero-actions">
-
-          <div class="availability-indicator available">
-            <span class="status-dot"></span>
-            <span class="status-text">
-              Available for selected projects
-            </span>
-          </div>
-
-          <a href="https://t.me/loose_change"
-             target="_blank"
-             class="primary-cta"
-             aria-label="Start a conversation on Telegram">
-            → Start a Conversation
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <!-- ===== SELECTED WORK ===== -->
-    <section class="work-section">
-
-      <h2 class="section-title">
-        Selected Work
-      </h2>
-
-      <div class="work-categories">
-
-        <!-- Creative Direction -->
-        <section class="work-category">
-          <button class="category-toggle">
-            Creative Direction
-          </button>
-
-          <div class="category-content">
-            <div class="project">
-              Project Placeholder
-            </div>
-          </div>
-        </section>
-
-
-        <!-- Film & TV Directing -->
-        <section class="work-category">
-          <button class="category-toggle">
-            Film & TV Directing
-          </button>
-
-          <div class="category-content">
-            <div class="project">
-              Project Placeholder
-            </div>
-          </div>
-        </section>
-
-
-        <!-- Writing -->
-        <section class="work-category">
-          <button class="category-toggle">
-            Writing & Script Development
-          </button>
-
-          <div class="category-content">
-            <div class="project">
-              Project Placeholder
-            </div>
-          </div>
-        </section>
-
-
-        <!-- Assistant Directing -->
-        <section class="work-category">
-          <button class="category-toggle">
-            Assistant Directing
-          </button>
-
-          <div class="category-content">
-            <div class="project">
-              Project Placeholder
-            </div>
-          </div>
-        </section>
-
+    <div class="hero-right">
+      <div class="availability available">
+        <span class="dot"></span>
+        Available for selected projects
       </div>
 
-    </section>
+      <a href="https://t.me/loose_change" target="_blank" class="cta">
+        Start a Conversation
+      </a>
+    </div>
+  </section>
 
 
+  <!-- WORK -->
+  <section class="work">
+    <h2>Selected Work</h2>
 
-    <!-- ===== PERSONAL SECTION ===== -->
-    <section class="personal-section">
-
-      <h2 class="section-title">
-        Beyond Film
-      </h2>
-
-      <div class="personal-content">
-        <p>Poetry</p>
-        <p>Song & Melody Writing</p>
+    <div class="category">
+      <button class="category-toggle">Creative Direction</button>
+      <div class="category-content">
+        <p>Project Placeholder</p>
       </div>
+    </div>
 
-    </section>
+    <div class="category">
+      <button class="category-toggle">Film & TV Directing</button>
+      <div class="category-content">
+        <p>Project Placeholder</p>
+      </div>
+    </div>
 
-  </main>
+    <div class="category">
+      <button class="category-toggle">Writing & Script Development</button>
+      <div class="category-content">
+        <p>Project Placeholder</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <button class="category-toggle">Assistant Directing</button>
+      <div class="category-content">
+        <p>Project Placeholder</p>
+      </div>
+    </div>
+  </section>
 
 
+  <!-- HOBBY -->
+  <section class="hobby">
+    <h2>Beyond Film</h2>
+    <p>Poetry</p>
+    <p>Song & Melody Writing</p>
+  </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
+
+  <footer class="footer">
     © 2026 Yididya Merete
   </footer>
 
-
-
-  <!-- ================= SCRIPT ================= -->
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
